@@ -1,5 +1,8 @@
 $ErrorActionPreference = 'Stop'
 
+$ServerDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+$ResultPath = Join-Path $ServerDir 'firewall_result.txt'
+
 $rules = @(
     @{ Name = 'Minecraft Java Server 25565 TCP'; Protocol = 'TCP' },
     @{ Name = 'Minecraft Java Server 25565 UDP'; Protocol = 'UDP' }
@@ -25,4 +28,4 @@ foreach ($rule in $rules) {
 Get-NetFirewallRule -DisplayName 'Minecraft Java Server 25565 *' |
     Get-NetFirewallPortFilter |
     Select-Object Protocol, LocalPort |
-    Out-File -LiteralPath 'C:\MinecraftServer\firewall_result.txt' -Encoding utf8
+    Out-File -LiteralPath $ResultPath -Encoding utf8
