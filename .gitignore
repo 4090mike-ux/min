@@ -13,3 +13,6 @@ versions/
 # Local lock and machine-specific output
 world/session.lock
 firewall_result.txt
+.runtime/
+*.tmp
+server.jar.bad.*
