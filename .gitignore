@@ -1,0 +1,15 @@
+# Runtime logs and console redirects
+logs/
+*.log
+
+# Crash/runtime diagnostics
+crash-reports/
+debug/
+
+# Minecraft server bundle extracts these from server.jar automatically.
+libraries/
+versions/
+
+# Local lock and machine-specific output
+world/session.lock
+firewall_result.txt
